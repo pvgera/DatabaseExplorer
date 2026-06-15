@@ -52,9 +52,11 @@ DatabaseExplorer/
 - **Scoring engine** — `ScoringFunctions.py` turns raw NHANES (`.xpt`), HRS RAND
   (`.dta`), and HRS Core (`.DA`) files into 0–100 burden scores using an
   un-weighted **Sum-Score Model**, driven entirely by `VariableDict.xlsx`.
-- **Validated** — on real HRS 2016 data the engine reproduces the study's
-  sleep↔depression association (Spearman ρ ≈ 0.48 on a single wave, vs the
-  memoir's pooled 0.55).
+- **Validated on real HRS data** — the current pipeline reproduces the study's
+  core associations: the sleep↔depression correlation (Spearman ρ ≈ 0.48 on a
+  single wave vs the memoir's pooled 0.55), and the headline **sex-specific
+  sleep→arrhythmia** signal (2016-landmark Cox: women HR ≈ 1.22/SD, p ≈ 0.002;
+  men null — matching memoir Fig 4h, women up to 1.24/SD significant, men not).
 - **Reproducible analyses** — `StatsAnal.ipynb` walks the seven memoir figures in
   order, recomputing each association from the current pipeline, with method
   notes and limitations.
