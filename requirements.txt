@@ -1,0 +1,32 @@
+# DatabaseExplorer — Python dependencies
+# Tested on Python 3.13.9 (Windows). Use a fresh virtual environment:
+#     python -m venv .venv
+#     .venv\Scripts\activate        (Windows)   |   source .venv/bin/activate  (macOS/Linux)
+#     pip install -r requirements.txt
+#
+# Versions below are the ones the associated study was run on. Looser pins
+# (>=) are usually fine, but these are the known-good combination.
+
+# --- Core data handling & numerics ---
+pandas==2.3.3
+numpy==2.4.4
+openpyxl==3.1.5          # reads the VariableDict.xlsx template
+
+# --- Statistics ---
+scipy==1.17.1            # Spearman, Mann-Whitney U, Kruskal-Wallis, chi-square
+statsmodels==0.14.6      # LOWESS, linear mixed effects, multiple-test correction
+lifelines==0.30.3        # Cox regression, Aalen-Johansen, Kaplan-Meier, Harrell's C
+scikit-posthocs==0.12.0  # Holm correction for pairwise comparisons
+
+# --- Plotting ---
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# --- Notebook (for StatsAnal.ipynb) ---
+jupyter==1.1.1
+
+# NOTE on raw-data readers:
+#   NHANES .xpt  -> pandas.read_sas   (built in, no extra package)
+#   HRS RAND .dta -> pandas.read_stata (built in, no extra package)
+#   HRS Core .DA  -> pandas.read_fwf   (built in; column positions parsed from
+#                                       the matching codebook .txt — see RawData/RD_README.md)

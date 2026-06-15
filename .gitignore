@@ -1,0 +1,82 @@
+# =========================================================
+# DatabaseExplorer — .gitignore
+# =========================================================
+# This repository ships CODE and a TEMPLATE variable dictionary only.
+# It must never contain participant-level data from NHANES or HRS.
+# Those datasets are obtained by each user under the programs' own
+# data-use terms (see RawData/RD_README.md).
+
+# ---------------------------------------------------------
+# Raw source data — NEVER commit
+# ---------------------------------------------------------
+RawData/**
+!RawData/RD_README.md
+!RawData/.gitkeep
+
+# Raw data file formats (belt-and-suspenders, anywhere in tree)
+*.xpt
+*.dta
+*.da
+*.sas7bdat
+*.zip
+
+# ---------------------------------------------------------
+# Scored outputs produced by ScoringFunctions.py
+# ---------------------------------------------------------
+SF_OUTPUT/**
+!SF_OUTPUT/SFO_README.md
+!SF_OUTPUT/.gitkeep
+
+# Generic data files (the template VD .xlsx is whitelisted below)
+*.csv
+*.tsv
+
+# Whitelist the tracked template variable dictionary
+!VariableDict.xlsx
+
+# ---------------------------------------------------------
+# Python cache & build artifacts
+# ---------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+build/
+dist/
+*.egg-info/
+
+# ---------------------------------------------------------
+# Conda / virtual environments — NEVER commit
+# ---------------------------------------------------------
+**/.conda/
+.conda/
+venv/
+env/
+.venv/
+conda_env/
+
+# ---------------------------------------------------------
+# Jupyter
+# ---------------------------------------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# ---------------------------------------------------------
+# Figures & manuscript exports
+# ---------------------------------------------------------
+*.png
+*.docx
+
+# ---------------------------------------------------------
+# IDE / OS clutter
+# ---------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
